@@ -1,4 +1,10 @@
+
+
+
+      
+
 function checkAnswer (){
+      var stdName = document.getElementById("studentName")
       var score = 0;
       var rightAnswer1 = document.getElementById("q1-a1");
       var q1a2 = document.getElementById("q1-a2");
@@ -35,7 +41,34 @@ function checkAnswer (){
       if(rightAnswer5.checked == true){
             score++;
       }
+      if (stdName.value == ""){
+            alert("Please Enter Your Name");
+            
+      }else{
+            var stdData = firebase.database().ref('stdName').set(stdName.value)
+            var scoreData = firebase.database().ref('score').set(score)
+            document.write("You Secure " + score + " Marks");
 
-      document.write("Your Score is: " + score +"<br><br>");
-      document.write("You Got " + (score/5)*100 + "%");
+
+
+
+            // document.write()
+      
+            // var tododata = document.getElementById("todo_data");
+
+            var dataBase = firebase.database().ref('stdName');
+            var key = dataBase.push().key;
+      
+            var quizObj = {
+                  StudentName: stdData,
+                  score:scoreData,
+                  key: key
+      
+            }
+      
+            dataBase.child(key).set(quizObj)
+      
+      
+      }
+      
 }

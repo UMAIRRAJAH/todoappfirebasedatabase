@@ -5,8 +5,28 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <link rel="stylesheet" href="style.css">
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+      <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+              apiKey: "AIzaSyBo0bjIbO-_ZLK09Cq6gteEAE8ucDNokLM",
+              authDomain: "quizappdatabase-a940a.firebaseapp.com",
+              databaseURL: "https://quizappdatabase-a940a-default-rtdb.firebaseio.com",
+              projectId: "quizappdatabase-a940a",
+              storageBucket: "quizappdatabase-a940a.appspot.com",
+              messagingSenderId: "398238147554",
+              appId: "1:398238147554:web:28c41afb1586c67dc8cfbb",
+              measurementId: "G-KNMW92VZYV"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+          </script>
 </head>
 <body>
+      <h4>Enter Your Name</h4>
+      <input type="text" placeholder="Enter Your Name" id="studentName">
       <h1>Quiz</h1>
 
       <div>
@@ -23,8 +43,8 @@
                   <p>Q2. Full Form of CPU is?</p>
                   <input id="q2-a1" type="radio" name="question2"> CENTRAL PROGRAM UNIT
                   <input id="q2-a2" type="radio" name="question2"> CENTRAL PROCESSING UNIT
-                  <input id="q3-a3" type="radio" name="question2"> RIGHT ACCESS MEMORY
-                  <input id="q4-a4" type="radio" name="question2"> NONE OF THE ABOVE
+                  <input id="q2-a3" type="radio" name="question2"> RIGHT ACCESS MEMORY
+                  <input id="q2-a4" type="radio" name="question2"> NONE OF THE ABOVE
             </fieldset>
       </div>
       <div>
